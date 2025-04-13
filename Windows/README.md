@@ -1,5 +1,10 @@
 # Instructions to install in windows
 
+### Run
+```bash
+.\install.bat
+```
+
 ### MSYS2
 ```bash
 pacman -Syu        # Обновление базы пакетов
@@ -9,12 +14,12 @@ pacman -S mingw-w64-x86_64-gcc
 # pacman -S mingw-w64-i686-gcc # Для 32-битной системы:
 ```
 
-Add to PATH:
+### Add to PATH:
 ```
 C:\msys64\mingw64\bin
 ```
 
-## Other apps
+### Other apps
 - Amnezia - tg with K
 - Yandex
 - Chrome (WikiVPN)
