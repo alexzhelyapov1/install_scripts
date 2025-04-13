@@ -7,14 +7,14 @@ setlocal enabledelayedexpansion
 
 :: https://www.msys2.org/
 :: https://git-scm.com/downloads/win
-:: https://www.python.org/downloads/
 :: https://windirstat.net/download.html
+:: https://www.python.org/downloads/
 
 set LINKS=^
  "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"^
  "https://github.com/msys2/msys2-installer/releases/download/2025-02-21/msys2-x86_64-20250221.exe"^
- "https://www.python.org/ftp/python/3.13.3/python-3.13.3-amd64.exe"^
- "https://github.com/windirstat/windirstat/releases/download/release/v2.2.2/WinDirStat-x64.msi"
+ "https://github.com/windirstat/windirstat/releases/download/release/v2.2.2/WinDirStat-x64.msi"^
+ "https://www.python.org/ftp/python/3.13.3/python-3.13.3-amd64.exe"
 
 :: Download directory (subfolder named "Downloads" where the script is located)
 set "DOWNLOAD_DIR=%~dp0Downloads"
