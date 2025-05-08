@@ -5,6 +5,19 @@
 sudo ./install.sh
 ```
 
+### Setup git
+```
+git config --global user.email "alexzhelyapov1@mail.ru"
+git config --global user.name "Zhelyapov Aleksey"
+```
+
+### Switch keyboard layout
+```
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Alt>Shift_L', '<Alt>Shift_R']"
+```
+
+# Notes
+
 ### ML
 Uncomment requirements in files for ML.
 
