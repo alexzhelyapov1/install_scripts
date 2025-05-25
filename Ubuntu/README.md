@@ -13,7 +13,7 @@ git config --global user.name "Zhelyapov Aleksey"
 
 ### Switch keyboard layout
 ```
-gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Alt>Shift_L', '<Alt>Shift_R']"
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Alt>Shift_L', '<Alt>Shift_R', '<Shift>Alt_L', '<Shift>Alt_R']"
 ```
 
 # Notes
