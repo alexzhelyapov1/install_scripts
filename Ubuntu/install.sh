@@ -19,6 +19,8 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+echo 'export PATH="$PATH:/home/alex/.local/bin"' >> ~/.bashrc
+
 # Update and apt install
 apt update -y
 grep -vE '^#|^$' "$APT_REQUIREMENTS" | xargs apt install -y

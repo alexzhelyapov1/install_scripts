@@ -4,5 +4,7 @@ jupyterlab
 numpy
 pandas
 matplotlib
+# scikit-image
+# opencv-python
 # scikit-learn
 # torch
