@@ -1,15 +1,15 @@
 # Instructions to install in windows
 
-### Run
-```bash
-.\install.bat
-```
-
 ### Powershell
 ```bash
 # Remove MAX_PATH len limit on Windows
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -Type DWord
 Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled"
+```
+
+### Run
+```bash
+.\install.bat
 ```
 
 ### MSYS2
@@ -39,3 +39,4 @@ C:\msys64\mingw64\bin
 - Amnezia - tg with K
 - Yandex
 - Chrome (WikiVPN)
+- Colemak - https://colemak.com/Windows

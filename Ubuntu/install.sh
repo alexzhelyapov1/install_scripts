@@ -19,6 +19,11 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Setup keyboard
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ru'), ('xkb', 'us+colemak')]"
+gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggle']"
+
+# For python
 echo 'export PATH="$PATH:/home/alex/.local/bin"' >> ~/.bashrc
 
 # Update and apt install
