@@ -21,6 +21,12 @@ Fish:
 + echo -n -s (set_color $fish_color_user) "$USER" (set_color normal) (set_color normal)
 ```
 
+### Change default shell to bash
+```
+ [1]:Open the Terminal tool and execute the following command: sudo dpkg-reconfigure dash 
+ [2]:Enter the password and select <no>
+```
+
 
 ### Switch keyboard layout (optional, presents in install script already)
 ```bash
