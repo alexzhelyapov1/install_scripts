@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "afterDelay",
+    "git.enableSmartCommit": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
+    "terminal.integrated.initialHint": false
+}

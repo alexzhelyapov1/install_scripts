@@ -1,0 +1,12 @@
+# ----------------------------------------------------------------------------------------------------------------------
+# VS Code extensions, one id per line (as printed by "code --list-extensions").
+# The MPL extension is a local .vsix build and is installed by hand.
+# ----------------------------------------------------------------------------------------------------------------------
+eamodio.gitlens
+mhutchie.git-graph
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
+tomoki1207.pdf
+vadimcn.vscode-lldb

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Time Logger
+Comment=Opens time-logger in the browser after login (the server is the time-logger systemd user service)
+Exec=sh -c "sleep 5 && xdg-open http://127.0.0.1:5000"
+X-GNOME-Autostart-enabled=true

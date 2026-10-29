@@ -1,57 +1,52 @@
 # Ubuntu
 
+Turns a fresh Ubuntu 24.04 (user `alex`) into the working environment. Every step is idempotent: run it again after a failure or to sync a machine with the repository.
+
+### Before the first run
+- ssh key in `~/.ssh` (GitHub repositories are cloned over ssh), `git` installed.
+- Clone this repository: `git clone git@github.com:alexzhelyapov1/install_scripts.git ~/install_scripts`
+- Create the machine-specific settings and check the values:
+```bash
+cp dotfiles/bash/env.local.example dotfiles/bash/env.local
+```
+- Choose where `/mnt/storage` comes from in `storage.conf` (default: link to `~/.storage`).
+
 ### Run
 ```bash
-sudo ./install.sh
+./install.sh                # all steps
+./install.sh shell vscode   # only the listed steps
 ```
+Run as the regular user, the script calls `sudo` itself. At the end it prints a report: status of every step and the manual steps left. Full log: `~/.cache/install_scripts/`.
 
-### Setup git
-```bash
-git config --global user.email "alexzhelyapov1@mail.ru"
-git config --global user.name "Zhelyapov Aleksey"
-```
+On the first gitea clone git asks for the login and an access token. They are kept in GNOME Keyring.
 
-### Short console
-Bash
-Find `PS1=`, remove `@\h`.
+### Steps
+| Step | What it does |
+|------|--------------|
+| `storage`  | `/mnt/storage` (link or disk, `storage.conf`), `/mnt/storage/gravilink/{core,.bin}` |
+| `apt`      | Docker, Chrome, LLVM, VS Code repositories, `requirements/apt.txt` |
+| `snap`     | `requirements/snap.txt` (only what apt doesn't have) |
+| `tools`    | uv, nvm + Node, `requirements/npm.txt`, emsdk, curl from source |
+| `shell`    | `~/.bashrc` block that sources `dotfiles/bash/env.sh`, fish config links |
+| `vscode`   | settings links, `requirements/vscode.txt` |
+| `gnome`    | keyboard layouts, Alt+Shift switching |
+| `git`      | identity (work email under `/mnt/storage/gravilink`), gitea credentials helper |
+| `repos`    | `requirements/repos.txt` |
+| `services` | sendme-bot and time-logger: venvs, cron, `.bin` links, systemd user services |
+| `agents`   | `wsg setup` from work-setup-gravilink |
+| `system`   | docker group, GRUB timeout on dual boot |
 
-Fish:
-```diff
-- echo -n -s (set_color $fish_color_user) "$USER" (set_color normal) @ (set_color $color_host) (prompt_hostname) (set_color normal)
-+ echo -n -s (set_color $fish_color_user) "$USER" (set_color normal) (set_color normal)
-```
-
-### Change default shell to bash
-```
- [1]:Open the Terminal tool and execute the following command: sudo dpkg-reconfigure dash 
- [2]:Enter the password and select <no>
-```
-
-
-### Switch keyboard layout (optional, presents in install script already)
-```bash
-gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Alt>Shift_L', '<Alt>Shift_R', '<Shift>Alt_L', '<Shift>Alt_R']"
-```
-
-### Extend dual boot delay
-```bash
-sudo nano /etc/default/grub
-GRUB_TIMEOUT=15
-# save
-sudo update-grub
-```
-
-### VS Code extensions
-- C++ extension pack
-- Python
-- Git graph
-- Trailing Spaces
-- clangd (not using)
+### Keep the repository up to date
+- Configs (`env.sh`, fish, VS Code settings) are links into the repository: edit them in place, then commit.
+- `inst <package>` (bash and fish) installs an apt package and appends it to `requirements/apt.txt`.
+- `./install.sh diff` shows apt, snap, npm packages, VS Code extensions and repositories that differ from the lists.
 
 # Notes
 
-### ML
-Uncomment requirements in files for ML.
+### Change /bin/sh to bash
+```
+sudo dpkg-reconfigure dash   # select <no>
+```
 
 ### Virtual box commands
 - Change folder owner: `sudo chown $USER:$USER /path/to/file`

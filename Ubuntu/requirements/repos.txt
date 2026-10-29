@@ -1,0 +1,93 @@
+# ----------------------------------------------------------------------------------------------------------------------
+# Repositories to clone: <url> <directory>. Variables from env.local are expanded in the directory.
+# Existing directories are skipped. gitea is used over https: git asks for the login and token once (steps/git.sh).
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Agent memory and configs (linked by the agents step)
+git@github.com:alexzhelyapov1/work-setup-gravilink.git $WORK_SETUP_DIR
+
+# Personal tools (prepared by the services step)
+git@github.com:alexzhelyapov1/daemon.git $SENDME_BOT_DIR
+git@github.com:alexzhelyapov1/time-logger.git $TIME_LOGGER_DIR
+
+# Work repositories
+https://gitea.gravilink.org/Tools/agents-setup.git $GRAVILINK_DIR/core/agents-setup
+https://gitea.gravilink.org/Infrastructure/ansible-common.git $GRAVILINK_DIR/core/ansible-common
+https://gitea.gravilink.org/Tools/auto-documentation.git $GRAVILINK_DIR/core/auto-documentation
+https://gitea.gravilink.org/AutoML/automl-ansible.git $GRAVILINK_DIR/core/automl-ansible
+https://gitea.gravilink.org/AutoML/automl-benchmarks.git $GRAVILINK_DIR/core/automl-benchmarks
+https://gitea.gravilink.org/MPL/bench.git $GRAVILINK_DIR/core/bench
+https://gitea.gravilink.org/Tools/build-system-ruleset-default.git $GRAVILINK_DIR/core/build-system-ruleset-default
+https://gitea.gravilink.org/Infrastructure/cicd-scripts.git $GRAVILINK_DIR/core/cicd-scripts
+https://gitea.gravilink.org/Common/crypto.git $GRAVILINK_DIR/core/crypto
+https://gitea.gravilink.org/Infrastructure/daily-tests-bot.git $GRAVILINK_DIR/core/daily-tests-bot
+https://gitea.gravilink.org/Infrastructure/drone-ci-notify-bot.git $GRAVILINK_DIR/core/drone-ci-notify-bot
+https://gitea.gravilink.org/Infrastructure/drone-pipelines-common.git $GRAVILINK_DIR/core/drone-pipelines-common
+https://gitea.gravilink.org/Infrastructure/drone-pipelines-mpl.git $GRAVILINK_DIR/core/drone-pipelines-mpl
+https://gitea.gravilink.org/Bots/dvcs-ci-module/ $GRAVILINK_DIR/core/dvcs-ci-module
+https://gitea.gravilink.org/Common/emsdk-patch.git $GRAVILINK_DIR/core/emsdk-patch
+https://gitea.gravilink.org/WikiDocuments/general-docs.git $GRAVILINK_DIR/core/general-docs
+https://gitea.gravilink.org/Infrastructure/grafana.git $GRAVILINK_DIR/core/grafana
+https://gitea.gravilink.org/Common/implicit-interface.git $GRAVILINK_DIR/core/implicit-interface
+https://gitea.gravilink.org/Tools/json-rpc-engine.git $GRAVILINK_DIR/core/json-rpc-engine
+https://gitea.gravilink.org/Infrastructure/keycloak.git $GRAVILINK_DIR/core/keycloak
+https://gitea.gravilink.org/Lab/lab-backend.git $GRAVILINK_DIR/core/lab-backend
+https://gitea.gravilink.org/Lab/lab-ci-build-environment.git $GRAVILINK_DIR/core/lab-ci-build-environment
+https://gitea.gravilink.org/Lab/lab-editor.git $GRAVILINK_DIR/core/lab-editor
+https://gitea.gravilink.org/Lab/lab-engine.git $GRAVILINK_DIR/core/lab-engine
+https://gitea.gravilink.org/Lab/lab-examples.git $GRAVILINK_DIR/core/lab-examples
+https://gitea.gravilink.org/Lab/lab-frontend.git $GRAVILINK_DIR/core/lab-frontend
+https://gitea.gravilink.org/Lab/lab-infrastructure.git $GRAVILINK_DIR/core/lab-infrastructure
+https://gitea.gravilink.org/Lab/lab-math.git $GRAVILINK_DIR/core/lab-math
+https://gitea.gravilink.org/Lab/lab-physics $GRAVILINK_DIR/core/lab-physics
+https://gitea.gravilink.org/Tools/language-server.git $GRAVILINK_DIR/core/language-server
+https://gitea.gravilink.org/Tools/llcache.git $GRAVILINK_DIR/core/llcache
+https://gitea.gravilink.org/Common/lynx.git $GRAVILINK_DIR/core/lynx
+https://gitea.gravilink.org/Tools/man-gen.git $GRAVILINK_DIR/core/man-gen
+https://gitea.gravilink.org/AutoML/ml-service.git $GRAVILINK_DIR/core/ml-service
+https://gitea.gravilink.org/Lab/mpl-bgfx.git $GRAVILINK_DIR/core/mpl-bgfx
+https://gitea.gravilink.org/MPL/mpl-c.git $GRAVILINK_DIR/core/mpl-c
+https://gitea.gravilink.org/Infrastructure/mplc-container-builder.git $GRAVILINK_DIR/core/mplc-container-builder
+https://gitea.gravilink.org/Common/mpl-filesystem.git $GRAVILINK_DIR/core/mpl-filesystem
+https://gitea.gravilink.org/Tools/mpl-format.git $GRAVILINK_DIR/core/mpl-format
+https://gitea.gravilink.org/Lab/mpl-geometry.git $GRAVILINK_DIR/core/mpl-geometry
+https://gitea.gravilink.org/Common/mpl-http.git $GRAVILINK_DIR/core/mpl-http
+https://gitea.gravilink.org/Lab/mpl-imgui.git $GRAVILINK_DIR/core/mpl-imgui
+https://gitea.gravilink.org/MPL/mpl-man.git $GRAVILINK_DIR/core/mpl-man
+https://gitea.gravilink.org/WikiDocuments/mpl-manual.git $GRAVILINK_DIR/core/mpl-manual
+https://gitea.gravilink.org/Tools/mpl-project-template.git $GRAVILINK_DIR/core/mpl-project-template
+https://gitea.gravilink.org/Common/mpl-protobuf.git $GRAVILINK_DIR/core/mpl-protobuf
+https://gitea.gravilink.org/Tools/mpl-pygls-lsp.git $GRAVILINK_DIR/core/mpl-pygls-lsp
+https://gitea.gravilink.org/Lab/mpl-sdl.git $GRAVILINK_DIR/core/mpl-sdl
+https://gitea.gravilink.org/MPL/mpl-sl.git $GRAVILINK_DIR/core/mpl-sl
+https://gitea.gravilink.org/Common/mpl-utils.git $GRAVILINK_DIR/core/mpl-utils
+https://gitea.gravilink.org/Tools/mpl-vscode-plugin.git $GRAVILINK_DIR/core/mpl-vscode-plugin
+https://gitea.gravilink.org/Common/mpl-websocket.git $GRAVILINK_DIR/core/mpl-websocket
+https://gitea.gravilink.org/Lab/mpl-wgpu.git $GRAVILINK_DIR/core/mpl-wgpu
+https://gitea.gravilink.org/Tools/mpl-zed-plugin.git $GRAVILINK_DIR/core/mpl-zed-plugin
+https://gitea.gravilink.org/Infrastructure/new-employee-bot.git $GRAVILINK_DIR/core/new-employee-bot
+https://gitea.gravilink.org/Infrastructure/notification-bot.git $GRAVILINK_DIR/core/notification-bot
+https://gitea.gravilink.org/Lab/pal.git $GRAVILINK_DIR/core/pal
+https://gitea.gravilink.org/Common/parse-real.git $GRAVILINK_DIR/core/parse-real
+https://gitea.gravilink.org/Common/pixel.git $GRAVILINK_DIR/core/pixel
+https://gitea.gravilink.org/WikiDocuments/products-docs.git $GRAVILINK_DIR/core/products-docs
+https://gitea.gravilink.org/Infrastructure/python-bot-template.git $GRAVILINK_DIR/core/python-bot-template
+https://gitea.gravilink.org/Infrastructure/python-git-server-demo.git $GRAVILINK_DIR/core/python-git-server-demo
+https://gitea.gravilink.org/Infrastructure/redmine-export.git $GRAVILINK_DIR/core/redmine-export
+https://gitea.gravilink.org/Infrastructure/redmine_multi_time_entry_plugin.git $GRAVILINK_DIR/core/redmine_multi_time_entry_plugin
+https://gitea.gravilink.org/Infrastructure/redmine_oidc_plugin.git $GRAVILINK_DIR/core/redmine_oidc_plugin
+https://gitea.gravilink.org/Infrastructure/redmine_spent_time_plugin.git $GRAVILINK_DIR/core/redmine_spent_time_plugin
+https://gitea.gravilink.org/Infrastructure/redmine_time_calendar_plugin.git $GRAVILINK_DIR/core/redmine_time_calendar_plugin
+https://gitea.gravilink.org/Infrastructure/report-bot.git $GRAVILINK_DIR/core/report-bot
+https://gitea.gravilink.org/Infrastructure/task-exchange-inject.git $GRAVILINK_DIR/core/task-exchange-inject
+https://gitea.gravilink.org/Infrastructure/task-exchange-legacy-migrate.git $GRAVILINK_DIR/core/task-exchange-legacy-migrate
+https://gitea.gravilink.org/WikiDocuments/tech-docs.git $GRAVILINK_DIR/core/tech-docs
+https://gitea.gravilink.org/Infrastructure/techtasks.git $GRAVILINK_DIR/core/techtasks
+https://gitea.gravilink.org/Infrastructure/te-import.git $GRAVILINK_DIR/core/te-import
+https://gitea.gravilink.org/Tools/tiny.git $GRAVILINK_DIR/core/tiny
+https://gitea.gravilink.org/Tools/tree-sitter-mpl.git $GRAVILINK_DIR/core/tree-sitter-mpl
+https://gitea.gravilink.org/Common/uiterm.git $GRAVILINK_DIR/core/uiterm
+https://gitea.gravilink.org/Infrastructure/vault-config.git $GRAVILINK_DIR/core/vault-config
+https://gitea.gravilink.org/Infrastructure/windows-servercore-ltsc2022.git $GRAVILINK_DIR/core/windows-servercore-ltsc2022
+https://gitea.gravilink.org/Common/wolfssl-mpl-bindings.git $GRAVILINK_DIR/core/wolfssl-mpl-bindings
+https://gitea.gravilink.org/Common/zip.git $GRAVILINK_DIR/core/zip

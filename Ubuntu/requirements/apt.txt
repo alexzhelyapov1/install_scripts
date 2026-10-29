@@ -1,0 +1,64 @@
+# ----------------------------------------------------------------------------------------------------------------------
+# apt packages, one per line. 'inst <package>' installs a package and appends it here.
+# Packages from third-party repositories need that repository in steps/apt.sh.
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Build
+git
+build-essential
+cmake
+ninja-build
+pkg-config
+zlib1g-dev
+
+# Libraries for curl built from source (steps/tools.sh)
+libssl-dev
+libpsl-dev
+libbrotli-dev
+libzstd-dev
+
+# Git credentials in GNOME Keyring (steps/git.sh)
+libsecret-1-dev
+
+# Console tools
+curl
+vim
+jq
+ripgrep
+tree
+htop
+ffmpeg
+fish
+wl-clipboard
+xsel
+
+# Network
+openssh-server
+sshfs
+
+# Python: nothing goes to the global environment, tools are installed with uv
+python3-venv
+
+# Docker (repository: download.docker.com)
+docker-ce
+docker-ce-cli
+containerd.io
+docker-buildx-plugin
+docker-compose-plugin
+
+# Browser (repository: dl.google.com)
+google-chrome-stable
+
+# LLVM 22 (repository: apt.llvm.org)
+clang-22
+clang-format-22
+clang-tidy-22
+clang-tools-22
+clangd-22
+lld-22
+lldb-22
+llvm-22-dev
+llvm-22-tools
+
+# VS Code (repository: packages.microsoft.com)
+code
