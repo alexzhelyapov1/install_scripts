@@ -21,7 +21,7 @@ The version is deliberately minimal and grows over time. Postponed items are in 
 | `steps/<name>.sh` | One step each. Runs as its own process, so a failed step doesn't stop the others |
 | `lib/common.sh` | Logging, report and idempotency helpers shared by all scripts |
 | `requirements/*.txt` | Lists: apt, snap, npm, VS Code extensions, repositories |
-| `dotfiles/` | Configs deployed as symlinks (fish, VS Code) or sourced (`bash/env.sh`) |
+| `dotfiles/` | Configs and home scripts deployed as symlinks (fish, VS Code, `scripts/`) or sourced (`bash/env.sh`) |
 | `dotfiles/bash/env.local` | Machine-specific variables, not tracked. Template: `env.local.example` |
 | `templates/` | Files generated with machine paths (systemd units) or linked (autostart) |
 | `storage.conf` | Where `/mnt/storage` comes from |

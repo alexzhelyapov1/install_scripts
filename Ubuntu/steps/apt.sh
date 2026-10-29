@@ -106,3 +106,14 @@ fi
 # --- 3. Packages ---
 mapfile -t PACKAGES < <(read_list "$APT_LIST")
 apt_install "${PACKAGES[@]}"
+
+# --- 4. clang points at clang-22 ---
+# Builds call plain clang and clang++
+if [ "$(update-alternatives --query clang 2>/dev/null | awk '$1 == "Value:" {print $2}')" == "/usr/bin/clang-22" ] \
+    && grep -q "^ clang++ /usr/bin/clang++$" <<< "$(update-alternatives --query clang)"; then
+    log_info "clang and clang++ point at clang-22"
+else
+    sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-22 100 \
+        --slave /usr/bin/clang++ clang++ /usr/bin/clang++-22
+    mark_changed "Set clang and clang++ alternatives to clang-22"
+fi

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Connects dotfiles/bash/env.sh to ~/.bashrc and links the fish configs into the repository.
+# Connects dotfiles/bash/env.sh to ~/.bashrc and links the fish configs and home scripts into the repository.
 
 set -euo pipefail
 
@@ -29,3 +29,6 @@ link_config "$DOTFILES/fish/config_slm.fish" "$FISH_DIR/config_slm.fish"
 for function_file in "$DOTFILES"/fish/functions/*.fish; do
     link_config "$function_file" "$FISH_DIR/functions/$(basename "$function_file")"
 done
+
+# --- 3. Scripts in home ---
+link_config "$DOTFILES/scripts/ipv6.sh" "$HOME/ipv6.sh"
