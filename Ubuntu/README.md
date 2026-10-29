@@ -33,7 +33,7 @@ On the first gitea clone git asks for the login and an access token. They are ke
 | `git`      | identity (work email under `/mnt/storage/gravilink`), gitea credentials helper |
 | `repos`    | `requirements/repos.txt` |
 | `services` | sendme-bot and time-logger: venvs, cron, `.bin` links, systemd user services |
-| `agents`   | `wsg setup` from work-setup-gravilink |
+| `agents`   | `wsg setup` from work-setup-gravilink, agents-setup: MCP server, skills, Codex agents, MPL language server |
 | `system`   | docker group, GRUB timeout on dual boot |
 
 ### Keep the repository up to date

@@ -38,6 +38,7 @@ sshfs
 
 # Python: nothing goes to the global environment, tools are installed with uv
 python3-venv
+python3-dev
 
 # Docker (repository: download.docker.com)
 docker-ce
