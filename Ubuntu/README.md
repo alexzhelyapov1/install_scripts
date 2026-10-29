@@ -34,7 +34,7 @@ On the first gitea clone git asks for the login and an access token. They are ke
 | `repos`    | `requirements/repos.txt` |
 | `services` | sendme-bot and time-logger: venvs, cron, `.bin` links, systemd user services |
 | `agents`   | `wsg setup` from work-setup-gravilink, agents-setup: MCP server, skills, Codex agents, MPL language server |
-| `system`   | docker group, GRUB timeout on dual boot |
+| `system`   | docker group, GRUB timeout on dual boot, swap off |
 
 ### Keep the repository up to date
 - Configs (`env.sh`, fish, VS Code settings) are links into the repository: edit them in place, then commit.
