@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installs tools that are not available in apt or snap: uv, nvm + Node, global npm packages, emsdk, curl.
+# Installs tools that are not available in apt or snap: uv, nvm + Node, global npm packages, emsdk, curl, Telegram.
 
 set -euo pipefail
 
@@ -17,6 +17,9 @@ EMSDK_VERSION="6.0.4"
 CURL_VERSION="8.23.0"
 CURL_PREFIX="$HOME/.local/opt/curl-$CURL_VERSION"
 CURL_LINK="$HOME/.local/opt/curl"
+# Official build: unlike the snap it is current and updates itself, so the directory must stay writable by the user
+TELEGRAM_URL="https://telegram.org/dl/desktop/linux"
+TELEGRAM_DIR="$HOME/.local/opt/Telegram"
 
 # --- 1. uv ---
 if [ -x "$LOCAL_BIN/uv" ]; then
@@ -97,3 +100,15 @@ else
 fi
 # Stable path for env.sh, so a version bump doesn't need edits there
 link_config "$CURL_PREFIX" "$CURL_LINK"
+
+# --- 6. Telegram ---
+if [ -x "$TELEGRAM_DIR/Telegram" ]; then
+    log_info "Telegram is installed in $TELEGRAM_DIR"
+else
+    log_info "Installing Telegram..."
+    mkdir -p "$(dirname "$TELEGRAM_DIR")"
+    curl -fsSL "$TELEGRAM_URL" | tar -xJ -C "$(dirname "$TELEGRAM_DIR")"
+    mark_changed "Installed Telegram into $TELEGRAM_DIR"
+    report_todo "Launch Telegram once ('telegram'): it adds itself to the applications menu"
+fi
+link_config "$TELEGRAM_DIR/Telegram" "$LOCAL_BIN/telegram"

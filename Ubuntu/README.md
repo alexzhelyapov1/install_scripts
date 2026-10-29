@@ -26,7 +26,7 @@ On the first gitea clone git asks for the login and an access token. They are ke
 | `storage`  | `/mnt/storage` (bind mount or disk, `storage.conf`), `/mnt/storage/gravilink/{core,.bin}` |
 | `apt`      | Docker, Chrome, LLVM, VS Code repositories, `requirements/apt.txt`, `clang` → `clang-22` |
 | `snap`     | `requirements/snap.txt` (only what apt doesn't have) |
-| `tools`    | uv, nvm + Node, `requirements/npm.txt`, emsdk, curl from source |
+| `tools`    | uv, nvm + Node, `requirements/npm.txt`, emsdk, curl from source, Telegram |
 | `shell`    | `~/.bashrc` block that sources `dotfiles/bash/env.sh`, fish config links, `~/ipv6.sh` |
 | `vscode`   | settings links, `requirements/vscode.txt` |
 | `gnome`    | keyboard layouts, Alt+Shift switching |
