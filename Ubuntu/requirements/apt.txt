@@ -32,6 +32,17 @@ fish
 wl-clipboard
 xsel
 
+# Graphics development
+libgl-dev
+
+# Photos: photolib, fix-photos-dates
+libimage-exiftool-perl
+libvips-dev
+libvips-tools
+
+# Media codecs
+ubuntu-restricted-addons
+
 # Network
 openssh-server
 sshfs
@@ -46,6 +57,7 @@ docker-ce-cli
 containerd.io
 docker-buildx-plugin
 docker-compose-plugin
+skopeo
 
 # Browser (repository: dl.google.com)
 google-chrome-stable
@@ -60,6 +72,14 @@ lld-22
 lldb-22
 llvm-22-dev
 llvm-22-tools
+libc++-22-dev
+libc++abi-22-dev
+libunwind-22-dev
+libclang-22-dev
+libclang-cpp22-dev
+liblldb-22-dev
+libomp-22-dev
+libpolly-22-dev
 
 # VS Code (repository: packages.microsoft.com)
 code

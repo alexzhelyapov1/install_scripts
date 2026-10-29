@@ -6,3 +6,6 @@
 @shd101wyy/mume
 less
 puppeteer
+
+# Agents
+@google/gemini-cli
