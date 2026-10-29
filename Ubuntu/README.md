@@ -9,7 +9,7 @@ Turns a fresh Ubuntu 24.04 (user `alex`) into the working environment. Every ste
 ```bash
 cp dotfiles/bash/env.local.example dotfiles/bash/env.local
 ```
-- Choose where `/mnt/storage` comes from in `storage.conf` (default: link to `~/.storage`).
+- Choose where `/mnt/storage` comes from in `storage.conf` (default: bind mount of `~/.storage`).
 
 ### Run
 ```bash
@@ -23,7 +23,7 @@ On the first gitea clone git asks for the login and an access token. They are ke
 ### Steps
 | Step | What it does |
 |------|--------------|
-| `storage`  | `/mnt/storage` (link or disk, `storage.conf`), `/mnt/storage/gravilink/{core,.bin}` |
+| `storage`  | `/mnt/storage` (bind mount or disk, `storage.conf`), `/mnt/storage/gravilink/{core,.bin}` |
 | `apt`      | Docker, Chrome, LLVM, VS Code repositories, `requirements/apt.txt` |
 | `snap`     | `requirements/snap.txt` (only what apt doesn't have) |
 | `tools`    | uv, nvm + Node, `requirements/npm.txt`, emsdk, curl from source |
